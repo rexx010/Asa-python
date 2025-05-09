@@ -16,17 +16,17 @@ if purchase > 1:
  if purchase > 999 and purchase < 10001:
   discount_price = purchase * 0.05
   price = purchase - discount_price
-  print(f'discount ={discount_price:,.2f}')
-  print(f'Total amount ={price:,.2f}')
+  print(f'discount = {discount_price:,.2f}')
+  print(f'Total amount = {price:,.2f}')
 
- elif purchase > 10000 and purchase < 50000:
+ elif purchase > 10000 and purchase < 50001:
   discount_price = purchase * 0.10
   price = purchase - discount_price
-  print(f'discount ={discount_price:,.2f}')
-  print(f'Total amount ={price:,.2f}')
+  print(f'discount = {discount_price:,.2f}')
+  print(f'Total amount = {price:,.2f}')
 
- elif purchase > 49999:
+ elif purchase > 50000:
   discount_price = purchase * 0.20
   price = purchase - discount_price
-  print(f'discount ={discount_price:,.2f}')
-  print(f'Total amount ={price:,.2f}')
+  print(f'discount = {discount_price:,.2f}')
+  print(f'Total amount = {price:,.2f}')
