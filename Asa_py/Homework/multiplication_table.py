@@ -13,3 +13,5 @@ for number in range(1, 10):
  total8 = number * 8
  total9 = number * 9
  print(number,'\t',total,'\t',total2,'\t',total3,'\t',total4,'\t',total5,'\t',total6,'\t',total7,'\t',total8,'\t',total9)
+print()
+
