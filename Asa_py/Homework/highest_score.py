@@ -1,7 +1,9 @@
 highest_name = ' '
 highest = 0
 
-for number in range(0, 5):
+no_of_student = int(input('Enter number of student score: '))
+
+for number in range(no_of_student):
   name = input('Enter your name: ')
   score = int(input('Enter you student score: '))
 
