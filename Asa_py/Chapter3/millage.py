@@ -7,6 +7,7 @@ quit = 0
 while quit != -1:
 	gallon = float(input('Enter gallons used: '))
 	mile = int(input('Enter miles drivened: '))
+	
 	quit = int(input('press -1 to end:'))
 
 	gallons += gallon 
