@@ -1,4 +1,4 @@
-import MentrualAppFunction.py
+import MentrualAppFunction
 message = """
 Welcome to Phasegate Menstrual cycle calculator...
 
@@ -13,29 +13,29 @@ while(condition):
 	print(message);
 	userChoise = input()
 	match(userChoise):
-		case 1:
+		case '1':
 			print("Welcome to your calculater \n Enter your start date in this order(year, month, day): ");
-			year = input();
-			month = input();
-			day = input();
+			year = int(input());
+			month = int(input());
+			day = int(input());
 			
 
 			print("How many days is your cycle?: ");
-			cycle = input();
+			cycle = int(input());
 
 
-			#status = MentrualAppFunction.begin(year, month, day);
-			#end = MentrualAppFunction.finish(year, month, day, cycle);
-			#flow = MentrualAppFunction.flowDate(year, month, day);
-			#ovu = MentrualAppFunction.ovulation(year, month, day, cycle);
-			#fertile = MentrualAppFunction.fertileLength(year, month, day, cycle);
-			#safety = MentrualAppFunction.safeperiod(year, month, day, cycle);
+			status = MentrualAppFunction.begin(year, month, day);
+			end = MentrualAppFunction.finish(year, month, day, cycle);
+			flow = MentrualAppFunction.flowDate(year, month, day);
+			ovu = MentrualAppFunction.ovulation(year, month, day, cycle);
+			fertile = MentrualAppFunction.fertileLength(year, month, day, cycle);
+			safety = MentrualAppFunction.safeperiod(year, month, day, cycle);
 
 
-			print("Your cycle starts on the "+status);
+			print(status);
 
 
-			print("and your cycle ends on the "+end);
+			print(end);
 
 
 			print(flow);
@@ -49,17 +49,15 @@ while(condition):
 
 			print(safety);
 
-		case 0:
-			condition = false;
-		default:
+		case '0':
+			condition = False;
+		case _:
 			print("invalid input... Try again");
 
-}
 
 
 
 
 
 
-}
 
