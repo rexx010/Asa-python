@@ -71,30 +71,17 @@ class TestMenstrualApp(TestCase):
 		MentrualAppFunction.fertileLength(2025, 11, 15, 28);
 
 
+	def test_that_fertile_length_period_is_accurate(self):
+		actual = MentrualAppFunction.fertileLength(2025, 11, 15, 28);
+		expected = ('your fertility starts on the ', datetime.date(2025, 11, 22), ' it ends on the ', datetime.date(2025, 12, 1))
+		self.assertEqual(actual, expected)
 
 
+	def test_that_safe_period_Function_Exist(self):
+		MentrualAppFunction.safeperiod(2025, 11, 15, 28);
 
 
-
-
-'''	@Test
-	public void fertileLengthPeriodIsAccurate(){
-	 number = 2025, num2 = 11, num3 = 3, days = 28;
-	 output = MentrualAppFunction.fertileLength(number, num2, num3, days);
-	 expected = "your fertility starts on the 2025-11-10 it ends on the 2025-11-19";
-	assertEquals(expected, output);
-}
-
-	@Test
-	public void safeperiodFunctionWorks(){
-	 number = 2025, num2 = 12, num3 = 3, days = 28;
-	MentrualAppFunction.safeperiod(number, num2, num3, days);
-}
-
-
-	@Test
-	public void safeperiodIsAccurate(){
-	 number = 2025, num2 = 11, num3 = 3, days = 28;
-	 output = MentrualAppFunction.safeperiod(number, num2, num3, days);
-	 expected = "All days are safe to have fun excluding days within 2025-11-10 and 2025-11-19";
-	assertEquals(expected, output);'''
+	def test_that_safe_period_is_accurate(self):
+		actual = MentrualAppFunction.safeperiod(2025, 11, 15, 28);
+		expected = ('All days are safe to have fun excluding days within ', datetime.date(2025, 11, 22), ' and ', datetime.date(2025, 12, 1))
+		self.assertEqual(actual, expected)
