@@ -1,123 +1,113 @@
-from datetime import date
+from datetime import date, timedelta
 
-def begin(int year, int month, int day):
+def begin(year, month, day):
 	if(year > 9999):
-		return "Year can't have more than 5 digits"
+		return "Year can't have more than 5 digits for years"
 
 	elif(month > 12):
 		return "Months can't have more than 12"
 
-	elif(day > 30 || day > 31):
+	elif(day > 30 or day > 31):
 		return "Days can't have more than 30 or 31"
 
-	elif(year < 1000 || month < 1 || day < 1):
+	elif(year < 1000 or month < 1 or day < 1):
 		return "Invalid input";
 	else:
-		LocalDate start = LocalDate.of(year, month, day)
-		return "Your cycle starts on the "+start;
+		start_date = date(year, month, day)
+		return "Your cycle starts on ", start_date;
 
 
 
-def flowDate(int year, int month, int day):
+def flowDate(year, month, day):
 	if(year > 9999):
-		return "Year can't have more than 5 digits";
+		return "Year can't have more than 5 digits for years";
 
-	else if(month > 12):
+	elif(month > 12):
 		return "Months can't have more than 12";
 
-	else if(day > 30 || day > 31):
+	elif(day > 30 or day > 31):
 		return "Days can't have more than 30 or 31"
 
-	else if(year < 1000 || month < 1 || day < 1):
+	elif(year < 1000 or month < 1 or day < 1):
 		return "Invalid input"
 	else:
-		LocalDate start = LocalDate.of(year, month, day);
-		LocalDate stop = start.plusDays(5);
-		return "your flow starts on "+start+" it ends on "+stop;
+		start_date = date(year, month, day)
+		stop_date = start_date + timedelta(days=5);
+		return "your flow starts on ",start_date," it ends on ",stop_date;
 
 
-def finish(int year, int month, int day, int cycle):
+def finish(year, month, day, cycle):
 	if(year > 9999):
-		return "Year can't have more than 5 digits"
+		return "Year can't have more than 5 digits for years"
 
-	else if(month > 12):
+	elif(month > 12):
 		return "Months can't have more than 12"
 
-	else if(day > 30 || day > 31):
+	elif(day > 30 or day > 31):
 		return "Days can't have more than 30 or 31"
 
-	else if(year < 1000 || month < 1 || day < 1):
+	elif(year < 1000 or month < 1 or day < 1):
 		return "Invalid input"
 	else:
-	LocalDate check = LocalDate.of(year, month, day);
-	LocalDate end = check.plusDays(cycle);
-	return "Your cycle ends on the "+end;
+		start_date = date(year, month, day)
+		end_date = start_date + timedelta(days=cycle);
+		return "Your cycle ends on the ",end_date;
 
-public static String ovulation(int year, int month, int day, int cycle){
-if(year > 9999){
-return "Year can't have more than 5 digits";
-}
-else if(month > 12){
-return "Months can't have more than 12";
-}
-else if(day > 30 || day > 31){
-return "Days can't have more than 30 or 31";
-}
-else if(year < 1000 || month < 1 || day < 1){
-return "Invalid input";
-}else{
-LocalDate starting = LocalDate.of(year, month, day);
-LocalDate ending = starting.plusDays(cycle);
-LocalDate ovuStart = ending.minusDays(16);
-LocalDate ovuEnd = ending.minusDays(12);
-return "your ovulation starts on "+ovuStart+" it ends on "+ovuEnd;
-}
-}
+def ovulation(year, month, day, cycle):
+	if(year > 9999):
+		return "Year can't have more than 5 digits for years";
 
-public static String fertileLength(int year, int month, int day, int cycle){
-if(year > 9999){
-return "Year can't have more than 5 digits";
-}
-else if(month > 12){
-return "Months can't have more than 12";
-}
-else if(day > 30 || day > 31){
-return "Days can't have more than 30 or 31";
-}
-else if(year < 1000 || month < 1 || day < 1){
-return "Invalid input";
-}else{
-LocalDate started = LocalDate.of(year, month, day);
-LocalDate ended = started.plusDays(cycle);
-LocalDate ferileStart = ended.minusDays(21);
-LocalDate ferileEnd = ended.minusDays(12);
-return "your fertility starts on the "+ferileStart+" it ends on the "+ferileEnd;
-}
-}
+	elif(month > 12):
+		return "Months can't have more than 12";
 
-public static String safeperiod(int year, int month, int day, int cycle){
-if(year > 9999){
-return "Year can't have more than 5 digits";
-}
-else if(month > 12){
-return "Months can't have more than 12";
-}
-else if(day > 30 || day > 31){
-return "Days can't have more than 30 or 31";
-}
-else if(year < 1000 || month < 1 || day < 1){
-return "Invalid input";
-}else{
-LocalDate started = LocalDate.of(year, month, day);
-LocalDate ended = started.plusDays(cycle);
-LocalDate ferileStart = ended.minusDays(21);
-LocalDate ferileEnd = ended.minusDays(12);
-return "All days are safe to have fun excluding days within "+ferileStart+" and "+ferileEnd;
-}
-}
+	elif(day > 30 or day > 31):
+		return "Days can't have more than 30 or 31";
+
+	elif(year < 1000 or month < 1 or day < 1):
+		return "Invalid input";
+	else:
+		starting_date = date(year, month, day)
+		ending_date = starting_date + timedelta(days=cycle);
+		ovuStart_date = ending_date - timedelta(days=16);
+		ovuEnd_date = ending_date - timedelta(days=12);
+		return "your ovulation starts on ",ovuStart_date," it ends on ",ovuEnd_date;
 
 
+def fertileLength(year, month, day, cycle):
+	if(year > 9999):
+		return "Year can't have more than 5 digits for years";
+
+	elif(month > 12):
+		return "Months can't have more than 12";
+
+	elif(day > 30 or day > 31):
+		return "Days can't have more than 30 or 31";
+
+	elif(year < 1000 or month < 1 or day < 1):
+		return "Invalid input";
+	else:
+		started_date = date(year, month, day)
+		ended_date = started_date + timedelta(days=cycle);
+		ferileStart_date = ended_date - timedelta(days=21);
+		ferileEnd_date = ended_date - timedelta(days=12);
+		return "your fertility starts on the ",ferileStart_date," it ends on the ",ferileEnd_date;
 
 
+def safeperiod(year, month, day, cycle):
+	if(year > 9999):
+		return "Year can't have more than 5 digits for years";
 
-}
+	elif(month > 12):
+		return "Months can't have more than 12";
+
+	elif(day > 30 or day > 31):
+		return "Days can't have more than 30 or 31";
+
+	elif(year < 1000 or month < 1 or day < 1):
+		return "Invalid input";
+	else:
+		started_date = date(year, month, day)
+		ended_date = started_date + timedelta(days=cycle);
+		ferileStart_date = ended_date - timedelta(days=21);
+		ferileEnd_date = ended_date - timedelta(days=12);
+		return "All days are safe to have fun excluding days within ",ferileStart_date," and ",ferileEnd_date;
