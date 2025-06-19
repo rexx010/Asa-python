@@ -27,6 +27,7 @@ def sum_of_odd_elements(list_of_ten_number):
     sum_odd = 0
     index_count = 0
     for value in list_of_ten_number:
+
         if index_count % 2 != 0:
             sum_odd += value
         index_count += 1
@@ -38,7 +39,7 @@ def elements_at_third_index(list_of_ten_number):
         multi *= list_of_ten_number[index]
     return multi
 
-def calculate_all_element_average(number_length):
+def calculate_all_element_average(list_of_ten_number, number_length):
     total_ans = 0
     average_of_sum = 0
     for item in list_of_ten_number:
