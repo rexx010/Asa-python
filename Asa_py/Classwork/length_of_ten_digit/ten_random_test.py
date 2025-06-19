@@ -15,6 +15,8 @@ class MyTestCase(unittest.TestCase):
     def test_the_multiple_of_third_digits(self):
         self.assertEqual(elements_at_third_index([3 ,5 ,6 ,2 ,1 ,7 ,5 ,3 ,1 ,2]), 42)
 
-    def calculate_the_average_value(self):
-        self.assertEqual(calculate_all_element_average([3 ,5 ,6 ,2 ,1 ,7 ,5 ,3 ,1 ,2]), 5.5)
+    def test_calculate_the_average_value(self):
+        number = [3 ,5 ,6 ,2 ,1 ,7 ,5 ,3 ,1 ,2]
+        lent = 10
+        self.assertEqual(calculate_all_element_average(number, lent), 3.5)
 
