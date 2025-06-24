@@ -20,3 +20,11 @@ def sorth_collection(collection):
     collection.sort(reverse=True)
     return collection
 print(sorth_collection(number))
+
+
+def isOdd(number_filter):
+    return number_filter % 2 == 1
+
+number_filter = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+filtered_value = list(filter(isOdd, number_filter))
+print(filtered_value)
