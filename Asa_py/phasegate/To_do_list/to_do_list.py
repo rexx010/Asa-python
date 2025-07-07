@@ -61,7 +61,7 @@ press 0 to go back
 			user = int(input('Enter a number: '))
 			match(user):
 				case 1:
-					choose = input('Enter the task to mark: ')
+					choose = int(input('Enter the task to mark: '))
 					to_do_list_function.mark_task_completed(choose)
 					
 				case 0:
